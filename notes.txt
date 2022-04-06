@@ -1,0 +1,9 @@
+npm init -y
+
+
+package.json
+  "type": "module"
+
+index.html
+  <script type="module" src="./scripts/script"></script>
+
