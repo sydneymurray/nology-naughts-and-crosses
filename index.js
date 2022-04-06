@@ -1,0 +1,4 @@
+let player = "X"
+
+clearTheBoard()
+
