@@ -5,8 +5,15 @@ function handleClick(event){
     if(!checkMove(eventClass.slice(eventClass.length-1))) return
     
     winnerCheck()
-    if (player === "X") player = "O"
-    else player = "X" 
+    
+    if (player === "X") {
+        player = "O"
+        document.querySelector(".notification").innerText = "It's the Naught's turn to play" 
+    }
+    else {
+        player = "X" 
+        document.querySelector(".notification").innerText = "It's the Cross's turn to play" 
+    }
 }
 
 function clearTheBoard(){
