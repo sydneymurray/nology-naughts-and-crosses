@@ -4,7 +4,7 @@ function handleClick(event){
     
     if(!checkMove(eventClass.slice(eventClass.length-1))) return
     
-    winnerCheck()
+    if (winnerCheck()) return
     
     if (player === "X") {
         player = "O"
@@ -20,11 +20,14 @@ function clearTheBoard(){
     const blocks = document.querySelectorAll(".main-board__block")
     blocks.forEach(block => {
         block.innerHTML = ""
+        const blocksClass = block.getAttribute("class")
+        block.setAttribute("class","main-board__block main-board__block-" +
+            blocksClass.slice(blocksClass.length-1))
     })
 }
 
-function winnerCheck(player){
-
+function winnerCheck(){
+    
 }
 
 function highlightWinningBlocks(){
