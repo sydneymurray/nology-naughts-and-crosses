@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Beau+Rivage&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-style: bold;
+}
+
+.body {
+  text-align: center;
+}
+
+.title {
+  margin: 1ch;
+}
+
+.main-board {
+  max-width: 700px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin: 4ch auto;
+  padding: 2ch;
+}
+.main-board__block {
+  width: 222px;
+  height: 185px;
+  padding-top: 3px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 10em;
+  text-align: center;
+  vertical-align: middle;
+}
+.main-board__block-d, .main-board__block-e, .main-board__block-f {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+.main-board__block-b, .main-board__block-e, .main-board__block-h {
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+}
+
+@media screen and (max-width: 700px) {
+  .main-board {
+    max-width: 400px;
+  }
+  .main-board__block {
+    width: 122px;
+    height: 92px;
+    padding-top: 3px;
+    font-size: 5em;
+  }
+}

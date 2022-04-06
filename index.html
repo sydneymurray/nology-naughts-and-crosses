@@ -4,20 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
     <title>Naughts & Crosses</title>
 </head>
-<body>
-    <h1>Naughts & Crosses</h1>
-    <div class="main-bord">
-        <div class="block block-a" onClick="handleClick(event)"></div>
-        <div class="block block-b" onClick="handleClick(event)"></div>
-        <div class="block block-c" onClick="handleClick(event)"></div>
-        <div class="block block-d" onClick="handleClick(event)"></div>
-        <div class="block block-e" onClick="handleClick(event)"></div>
-        <div class="block block-f" onClick="handleClick(event)"></div>
-        <div class="block block-g" onClick="handleClick(event)"></div>
-        <div class="block block-h" onClick="handleClick(event)"></div>
-        <div class="block block-i" onClick="handleClick(event)"></div>
+<body class="body">
+    <h1 class="title">Naughts & Crosses</h1>
+    <div class="main-board">
+        <div class="main-board__block main-board__block-a" onClick="handleClick(event)">X</div>
+        <div class="main-board__block main-board__block-b" onClick="handleClick(event)">O</div>
+        <div class="main-board__block main-board__block-c" onClick="handleClick(event)">X</div>
+        <div class="main-board__block main-board__block-d" onClick="handleClick(event)">O</div>
+        <div class="main-board__block main-board__block-e" onClick="handleClick(event)">X</div>
+        <div class="main-board__block main-board__block-f" onClick="handleClick(event)">O</div>
+        <div class="main-board__block main-board__block-g" onClick="handleClick(event)">X</div>
+        <div class="main-board__block main-board__block-h" onClick="handleClick(event)">O</div>
+        <div class="main-board__block main-board__block-i" onClick="handleClick(event)">X</div>
     </div>  
+    <h2 class="notification">Crosses turn to play</h2>
 </body>
 </html>
