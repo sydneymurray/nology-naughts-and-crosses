@@ -1,8 +1,10 @@
 function handleClick(event){
     const eventClass = event.target.getAttribute("class")
-    if (!eventClass.includes("main-board__block")) return
     
-    console.log(eventClass);
+    if (winner) {
+        clearTheBoard()
+        return
+    }
 
     if(!checkMoveIsLegal(eventClass.slice(eventClass.length-1))) return
     
