@@ -2,6 +2,8 @@ function handleClick(event){
     const eventClass = event.target.getAttribute("class")
     if (!eventClass.includes("main-board__block")) return
     
+    console.log(eventClass);
+
     if(!checkMoveIsLegal(eventClass.slice(eventClass.length-1))) return
     
     winnerCheck()
@@ -53,7 +55,6 @@ function highlightWinningRowRed(blockOne, blockTwo, blockThree){
     
     block = document.querySelector(".main-board__block-" + blockThree)
     block.setAttribute("class", "red-text main-board__block main-board__block-" + blockThree)
-    console.log(`Winning  ${blockOne} ${blockTwo} ${blockThree} `)
 }
 
 function checkRow(blockOne, blockTwo, blockThree){
@@ -61,9 +62,14 @@ function checkRow(blockOne, blockTwo, blockThree){
     let blockTwoInnerText = document.querySelector(".main-board__block-" + blockTwo).innerText
     let blockThreeInnerText = document.querySelector(".main-board__block-" + blockThree).innerText
 
-    if (blockOneInnerText === blockTwoInnerText && blockOneInnerText === blockThreeInnerText)
+    if (!blockOneInnerText) return false
+
+    if (blockOneInnerText === blockTwoInnerText && blockOneInnerText === blockThreeInnerText){
         winner = blockOneInnerText 
-    return winner    
+        console.log(`${blockOneInnerText} ${blockTwoInnerText} ${blockThreeInnerText}`)
+        return true
+    }
+    else return false  
 }
 
 function checkMoveIsLegal(block){
