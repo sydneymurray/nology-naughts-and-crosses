@@ -8,11 +8,11 @@ function handleClick(event){
     
     if (player === "X") {
         player = "O"
-        document.querySelector(".notification").innerText = "It's the Naught's turn to play" 
+        notificationH2.innerText = "It's the Naught's turn to play" 
     }
     else {
         player = "X" 
-        document.querySelector(".notification").innerText = "It's the Cross's turn to play" 
+        notificationH2.innerText = "It's the Cross's turn to play" 
     }
 }
 
@@ -24,13 +24,30 @@ function clearTheBoard(){
         block.setAttribute("class","main-board__block main-board__block-" +
             blocksClass.slice(blocksClass.length-1))
     })
+    player = "X"
+    notificationH2.innerText = "It's the Cross's turn to play" 
 }
 
 function winnerCheck(){
+    if (checkRow("a","b","c")) highlightWinningBlocksRed("a","b","c")
+
     
 }
 
-function highlightWinningBlocks(){
+function setWinningRedText(letter){
+    let block = document.querySelector(".main-board__block-" + letter)
+    block.setAttribute("class", "red-text main-board__block main-board__block-" + letter)
+}
+
+function checkRow(blockOne, blockTwo, blockThree){
+    let blockOneInnerText = document.querySelector(".main-board__block-" + blockOne).innerText
+    let blockTwoInnerText = document.querySelector(".main-board__block-" + blockTwo).innerText
+    let blockThreeInnerText = document.querySelector(".main-board__block-" + blockThree).innerText
+    if (blockOneInnerText === blockTwoInnerText && blockOneInnerText === blockThreeInnerText)
+        winner = blockOneInnerText     
+}
+
+function highlightWinningBlocksRed(blockOne, blockTwo, blockThree){
 
 }
 
