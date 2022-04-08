@@ -1,12 +1,14 @@
 function handleClick(event){
     const eventClass = event.target.getAttribute("class")
-    
-    if (winner) {
+
+    if (winner || moves === 9) {
         clearTheBoard()
         return
     }
 
     if(!checkMoveIsLegal(eventClass.slice(eventClass.length-1))) return
+
+    moves++
     
     winnerCheck()
     if (winner) return
@@ -19,6 +21,9 @@ function handleClick(event){
         player = "X" 
         notificationH2.innerText = "It's the Cross's turn to play" 
     }
+    if (moves === 9)
+        notificationH2.innerText = "STALEMATE: Nobody wins!" 
+
 }
 
 function clearTheBoard(){
@@ -29,6 +34,7 @@ function clearTheBoard(){
         block.setAttribute("class","main-board__block main-board__block-" +
             blocksClass.slice(blocksClass.length-1))
     })
+    moves = 0
     winner = ""
     player = "X"
     notificationH2.innerText = "It's the Cross's turn to play" 
