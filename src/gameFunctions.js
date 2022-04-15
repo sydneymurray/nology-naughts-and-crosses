@@ -41,14 +41,9 @@ function clearTheBoard(){
 }
 
 function winnerCheck(){
-    if (checkRow("a","b","c")) highlightWinningRowRed("a","b","c")
-    if (checkRow("a","e","i")) highlightWinningRowRed("a","e","i")
-    if (checkRow("a","d","g")) highlightWinningRowRed("a","d","g")
-    if (checkRow("b","e","h")) highlightWinningRowRed("b","e","h")
-    if (checkRow("c","f","i")) highlightWinningRowRed("c","f","i")
-    if (checkRow("c","e","g")) highlightWinningRowRed("c","e","g")
-    if (checkRow("d","e","f")) highlightWinningRowRed("d","e","f")
-    if (checkRow("g","h","i")) highlightWinningRowRed("g","h","i")
+    rowCheckData.forEach(row => {
+        if (checkRow(row[0], row[1], row[2])) highlightWinningRowRed(row[0], row[1], row[2])
+    })
 
     if (winner ==="X") notificationH2.innerText = "The Cross's have won" 
     if (winner ==="O") notificationH2.innerText = "The Naught's have won"     
@@ -77,7 +72,7 @@ function checkRow(blockOne, blockTwo, blockThree){
         console.log(`${blockOneInnerText} ${blockTwoInnerText} ${blockThreeInnerText}`)
         return true
     }
-    else return false  
+    return false  
 }
 
 function checkMoveIsLegal(block){
