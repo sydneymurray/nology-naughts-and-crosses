@@ -21,9 +21,10 @@ function handleClick(event){
         player = "X" 
         notificationH2.innerText = "It's the Cross's turn to play" 
     }
-    if (moves === 9)
-        notificationH2.innerText = "STALEMATE: Nobody wins!" 
-
+    if (moves === 9) {
+        notificationH2.innerText = "STALEMATE: Nobody wins!"
+        newGameH2.innerText = "Click on the board to play again" 
+    }
 }
 
 function clearTheBoard(){
@@ -37,7 +38,8 @@ function clearTheBoard(){
     moves = 0
     winner = ""
     player = "X"
-    notificationH2.innerText = "It's the Cross's turn to play" 
+    notificationH2.innerText = "It's the Cross's turn to play"
+    newGameH2.innerText = "" 
 }
 
 function winnerCheck(){
@@ -45,8 +47,9 @@ function winnerCheck(){
         if (checkRow(row[0], row[1], row[2])) highlightWinningRowRed(row[0], row[1], row[2])
     })
 
-    if (winner ==="X") notificationH2.innerText = "The Cross's have won" 
-    if (winner ==="O") notificationH2.innerText = "The Naught's have won"     
+    if (winner === "X") notificationH2.innerText = "The Cross's have won" 
+    if (winner === "O") notificationH2.innerText = "The Naught's have won" 
+    if (winner) newGameH2.innerText = "Click on the board to play again" 
 }
 
 function highlightWinningRowRed(blockOne, blockTwo, blockThree){
